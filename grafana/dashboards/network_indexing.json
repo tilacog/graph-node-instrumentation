@@ -1,0 +1,1409 @@
+{
+   "annotations": {
+      "list": [
+         {
+            "builtIn": 1,
+            "datasource": "-- Grafana --",
+            "enable": true,
+            "hide": true,
+            "iconColor": "rgba(0, 211, 255, 1)",
+            "name": "Annotations & Alerts",
+            "type": "dashboard"
+         }
+      ]
+   },
+   "editable": true,
+   "gnetId": null,
+   "graphTooltip": 0,
+   "id": 3,
+   "iteration": 1574960703294,
+   "links": [ ],
+   "panels": [
+      {
+         "cacheTimeout": null,
+         "datasource": "Prometheus",
+         "description": "",
+         "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 0
+         },
+         "id": 20,
+         "links": [ ],
+         "options": {
+            "fieldOptions": {
+               "calcs": [
+                  "lastNotNull"
+               ],
+               "defaults": {
+                  "mappings": [ ],
+                  "max": 300,
+                  "min": 0,
+                  "thresholds": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 180
+                     }
+                  ],
+                  "unit": "s"
+               },
+               "override": { },
+               "values": false
+            },
+            "orientation": "auto",
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+         },
+         "pluginVersion": "6.4.3",
+         "targets": [
+            {
+               "expr": "time() - network_ethereum_[[network]]_v0_last_new_chain_head_time",
+               "legendFormat": "Last new chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "time() - network_ethereum_[[network]]_v0_last_written_block_time",
+               "legendFormat": "Last written block",
+               "refId": "B"
+            }
+         ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "Indexing Health",
+         "type": "gauge"
+      },
+      {
+         "datasource": "Prometheus",
+         "description": "",
+         "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 8,
+            "y": 0
+         },
+         "id": 22,
+         "interval": "",
+         "options": {
+            "fieldOptions": {
+               "calcs": [
+                  "last"
+               ],
+               "defaults": {
+                  "mappings": [ ],
+                  "max": 20,
+                  "min": 0,
+                  "thresholds": [
+                     {
+                        "color": "green",
+                        "value": null
+                     },
+                     {
+                        "color": "red",
+                        "value": 5
+                     }
+                  ],
+                  "unit": "none"
+               },
+               "override": { },
+               "values": false
+            },
+            "orientation": "auto",
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true
+         },
+         "pluginVersion": "6.4.3",
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_chain_head - network_ethereum_[[network]]_v0_local_head",
+               "instant": false,
+               "legendFormat": "Currently",
+               "refId": "A"
+            }
+         ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "Blocks behind",
+         "type": "gauge"
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "cacheTimeout": null,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 12,
+            "y": 0
+         },
+         "id": 14,
+         "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+         },
+         "lines": true,
+         "linewidth": 1,
+         "links": [ ],
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pluginVersion": "6.4.3",
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": true,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_chain_head",
+               "legendFormat": "Chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_local_head",
+               "legendFormat": "Local head",
+               "refId": "B"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Chain head vs. local head",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "locale",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "cacheTimeout": null,
+         "columns": [
+            {
+               "text": "Current",
+               "value": "current"
+            }
+         ],
+         "datasource": "Prometheus",
+         "fontSize": "100%",
+         "gridPos": {
+            "h": 8,
+            "w": 4,
+            "x": 20,
+            "y": 0
+         },
+         "id": 10,
+         "links": [ ],
+         "options": { },
+         "pageSize": null,
+         "pluginVersion": "6.4.3",
+         "showHeader": true,
+         "sort": {
+            "col": 1,
+            "desc": true
+         },
+         "styles": [
+            {
+               "alias": "Time",
+               "colorMode": null,
+               "colors": [
+                  "rgba(245, 54, 54, 0.9)",
+                  "rgba(237, 129, 40, 0.89)",
+                  "rgba(50, 172, 45, 0.97)"
+               ],
+               "decimals": 2,
+               "pattern": "Current",
+               "thresholds": [ ],
+               "type": "number",
+               "unit": "s"
+            }
+         ],
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_sync_total_secs",
+               "format": "time_series",
+               "hide": false,
+               "instant": false,
+               "legendFormat": "Total",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_blocks_secs",
+               "legendFormat": "Fetch blocks",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_unknown_secs",
+               "legendFormat": "Unknown",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_chain_head_secs",
+               "legendFormat": "Chain head",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_subgraph_head_secs",
+               "legendFormat": "Subgraph head",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_transact_block_secs",
+               "legendFormat": "Transact block",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_index_range_secs",
+               "legendFormat": "Index block range",
+               "refId": "G"
+            }
+         ],
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "Indexing time",
+         "transform": "timeseries_aggregations",
+         "type": "table"
+      },
+      {
+         "cacheTimeout": null,
+         "colorBackground": false,
+         "colorValue": false,
+         "colors": [
+            "#299c46",
+            "rgba(237, 129, 40, 0.89)",
+            "#d44a3a"
+         ],
+         "datasource": "Prometheus",
+         "format": "none",
+         "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+         },
+         "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 8,
+            "y": 4
+         },
+         "id": 24,
+         "interval": null,
+         "links": [ ],
+         "mappingType": 1,
+         "mappingTypes": [
+            {
+               "name": "value to text",
+               "value": 1
+            },
+            {
+               "name": "range to text",
+               "value": 2
+            }
+         ],
+         "maxDataPoints": 100,
+         "nullPointMode": "connected",
+         "nullText": null,
+         "options": { },
+         "pluginVersion": "6.4.3",
+         "postfix": "",
+         "postfixFontSize": "50%",
+         "prefix": "",
+         "prefixFontSize": "50%",
+         "rangeMaps": [
+            {
+               "from": "null",
+               "text": "N/A",
+               "to": "null"
+            }
+         ],
+         "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false,
+            "ymax": null,
+            "ymin": null
+         },
+         "tableColumn": "",
+         "targets": [
+            {
+               "expr": "changes(network_ethereum_[[network]]_v0_reorg_count[$__range])",
+               "refId": "A"
+            }
+         ],
+         "thresholds": "",
+         "timeFrom": null,
+         "timeShift": null,
+         "title": "Reorgs in time range",
+         "type": "singlestat",
+         "valueFontSize": "80%",
+         "valueMaps": [
+            {
+               "op": "=",
+               "text": "N/A",
+               "value": "null"
+            }
+         ],
+         "valueName": "current"
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 8
+         },
+         "id": 18,
+         "interval": "10s",
+         "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_poll_chain_head_problems",
+               "legendFormat": "Poll chain head",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_number_problems",
+               "legendFormat": "Fetch block by number (parallel)",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_hash_problems",
+               "legendFormat": "Fetch block by hash",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_full_block_problems",
+               "legendFormat": "Fetch full block (parallel)",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_ommers_problems",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_local_head_problems",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_collect_reorg_data_problems",
+               "legendFormat": "Collect reorg ata (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_new_blocks_problems",
+               "legendFormat": "Fetch new blocks (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_find_common_ancestor_problems",
+               "legendFormat": "Find common ancestor (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_parent_block_problems",
+               "legendFormat": "Load parent block (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_revert_blocks_problems",
+               "legendFormat": "Revert blocks (reorg)",
+               "refId": "I"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_write_block_problems",
+               "legendFormat": "Write block",
+               "refId": "J"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Potential problems",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "decimals": 0,
+               "format": "locale",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": "0",
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": "Time",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 8
+         },
+         "id": 12,
+         "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_reorg_count",
+               "legendFormat": "Number of reorgs",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_reorg_cancel_count",
+               "legendFormat": "Number of canceled reorgs",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_reorg_depth_avg",
+               "format": "time_series",
+               "instant": false,
+               "legendFormat": "Average reorg depth",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_reorg_depth_cur",
+               "format": "time_series",
+               "instant": false,
+               "legendFormat": "Latest reorg depth",
+               "refId": "D"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Reorgs",
+         "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "decimals": 0,
+               "format": "locale",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": "0",
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 8
+         },
+         "id": 26,
+         "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "rate(network_ethereum_[[network]]_v0_write_block_count[$__range])",
+               "legendFormat": "Blocks/s (time range)",
+               "refId": "A"
+            },
+            {
+               "expr": "rate(network_ethereum_[[network]]_v0_write_block_count[10m])",
+               "legendFormat": "Blocks/s (over 10 mins)",
+               "refId": "B"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Indexing rate",
+         "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+         },
+         "id": 17,
+         "interval": "10s",
+         "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_poll_chain_head_cur",
+               "legendFormat": "Poll chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_number_cur",
+               "legendFormat": "Fetch block by number (parallel)",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_hash_cur",
+               "legendFormat": "Fetch block by hash",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_full_block_cur",
+               "legendFormat": "Fetch full block (parallel)",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_ommers_cur",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_local_head_cur",
+               "legendFormat": "Load local head",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_collect_reorg_data_cur",
+               "legendFormat": "Collect reorg data (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_new_blocks_cur",
+               "legendFormat": "Fetch new blocks (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_find_common_ancestor_cur",
+               "legendFormat": "Find common ancestor (reorg)",
+               "refId": "I"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_parent_block_cur",
+               "legendFormat": "Load parent block (reorg)",
+               "refId": "J"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_revert_blocks_cur",
+               "legendFormat": "Revert blocks (reorg)",
+               "refId": "K"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_write_block_cur",
+               "legendFormat": "Write block",
+               "refId": "L"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Last time",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "s",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": "Time",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+         },
+         "id": 16,
+         "interval": "10s",
+         "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_poll_chain_head_avg",
+               "legendFormat": "Poll chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_number_avg",
+               "legendFormat": "Fetch block by number (parallel)",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_hash_avg",
+               "legendFormat": "Fetch block by hash",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_full_block_avg",
+               "legendFormat": "Fetch full block (parallel)",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_ommers_avg",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_local_head_avg",
+               "legendFormat": "Load local head",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_collect_reorg_data_avg",
+               "legendFormat": "Collect reorg data (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_new_blocks_avg",
+               "legendFormat": "Fetch new blocks (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_find_common_ancestor_avg",
+               "legendFormat": "Find common ancestor (reorg)",
+               "refId": "I"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_parent_block_avg",
+               "legendFormat": "Load parent block (reorg)",
+               "refId": "J"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_revert_blocks_avg",
+               "legendFormat": "Revert blocks (reorg)",
+               "refId": "K"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_write_block_avg",
+               "legendFormat": "Write block",
+               "refId": "L"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Average time",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "s",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": "Time",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 24
+         },
+         "id": 2,
+         "interval": "10s",
+         "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_poll_chain_head_sum",
+               "legendFormat": "Poll chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_number_sum",
+               "legendFormat": "Fetch block by number (parallel)",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_hash_sum",
+               "legendFormat": "Fetch block by hash",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_full_block_sum",
+               "legendFormat": "Fetch full block (parallel)",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_ommers_sum",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_local_head_sum",
+               "legendFormat": "Load local head",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_collect_reorg_data_sum",
+               "legendFormat": "Collect reorg data (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_new_blocks_sum",
+               "legendFormat": "Fetch new blocks (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_find_common_ancestor_sum",
+               "legendFormat": "Find common ancestor (reorg)",
+               "refId": "I"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_parent_block_sum",
+               "legendFormat": "Load parent block (reorg)",
+               "refId": "J"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_revert_blocks_sum",
+               "legendFormat": "Revert blocks (reorg)",
+               "refId": "K"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_write_block_sum",
+               "legendFormat": "Write block",
+               "refId": "L"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Total time",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "format": "s",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": "Time",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      },
+      {
+         "aliasColors": { },
+         "bars": false,
+         "dashLength": 10,
+         "dashes": false,
+         "datasource": "Prometheus",
+         "description": "",
+         "fill": 1,
+         "fillGradient": 0,
+         "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 24
+         },
+         "id": 15,
+         "interval": "10s",
+         "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+         },
+         "lines": true,
+         "linewidth": 1,
+         "nullPointMode": "null",
+         "options": {
+            "dataLinks": [ ]
+         },
+         "percentage": false,
+         "pointradius": 2,
+         "points": false,
+         "renderer": "flot",
+         "seriesOverrides": [ ],
+         "spaceLength": 10,
+         "stack": false,
+         "steppedLine": false,
+         "targets": [
+            {
+               "expr": "network_ethereum_[[network]]_v0_poll_chain_head_count",
+               "legendFormat": "Poll chain head",
+               "refId": "A"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_number_count",
+               "legendFormat": "Fetch block by number (parallel)",
+               "refId": "B"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_block_by_hash_count",
+               "legendFormat": "Fetch block by hash",
+               "refId": "C"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_full_block_count",
+               "legendFormat": "Fetch full block (parallel)",
+               "refId": "D"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_ommers_count",
+               "legendFormat": "Fetch ommers (parallel)",
+               "refId": "E"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_local_head_count",
+               "legendFormat": "Load local head",
+               "refId": "F"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_collect_reorg_data_count",
+               "legendFormat": "Collect reorg data (reorg)",
+               "refId": "G"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_fetch_new_blocks_count",
+               "legendFormat": "Fetch new blocks (reorg)",
+               "refId": "H"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_find_common_ancestor_count",
+               "legendFormat": "Find common ancestor (reorg)",
+               "refId": "I"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_load_parent_block_count",
+               "legendFormat": "Load parent block (reorg)",
+               "refId": "J"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_revert_blocks_count",
+               "legendFormat": "Revert blocks (reorg)",
+               "refId": "K"
+            },
+            {
+               "expr": "network_ethereum_[[network]]_v0_write_block_count",
+               "legendFormat": "Write block",
+               "refId": "L"
+            }
+         ],
+         "thresholds": [ ],
+         "timeFrom": null,
+         "timeRegions": [ ],
+         "timeShift": null,
+         "title": "Count",
+         "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+         },
+         "type": "graph",
+         "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [ ]
+         },
+         "yaxes": [
+            {
+               "decimals": 0,
+               "format": "locale",
+               "label": "",
+               "logBase": 1,
+               "max": null,
+               "min": "0",
+               "show": true
+            },
+            {
+               "format": "short",
+               "label": "Time",
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": false
+            }
+         ],
+         "yaxis": {
+            "align": false,
+            "alignLevel": null
+         }
+      }
+   ],
+   "refresh": "5s",
+   "schemaVersion": 20,
+   "style": "dark",
+   "tags": [ ],
+   "templating": {
+      "list": [
+         {
+            "allValue": null,
+            "current": {
+               "tags": [ ],
+               "text": "mainnet",
+               "value": "mainnet"
+            },
+            "hide": 0,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "network",
+            "options": [
+               {
+                  "selected": true,
+                  "text": "mainnet",
+                  "value": "mainnet"
+               },
+               {
+                  "selected": false,
+                  "text": "ropsten",
+                  "value": "ropsten"
+               },
+               {
+                  "selected": false,
+                  "text": "rinkeby",
+                  "value": "rinkeby"
+               },
+               {
+                  "selected": false,
+                  "text": "kovan",
+                  "value": "kovan"
+               },
+               {
+                  "selected": false,
+                  "text": "goerli",
+                  "value": "goerli"
+               },
+               {
+                  "selected": false,
+                  "text": "poa-core",
+                  "value": "poa-core"
+               }
+            ],
+            "query": "mainnet,ropsten,rinkeby,kovan,goerli,poa-core",
+            "skipUrlSync": false,
+            "type": "custom"
+         }
+      ]
+   },
+   "time": {
+      "from": "now-30m",
+      "to": "now"
+   },
+   "timepicker": {
+      "nowDelay": "",
+      "refresh_intervals": [
+         "5s",
+         "10s",
+         "30s",
+         "1m",
+         "5m",
+         "15m",
+         "30m",
+         "1h",
+         "2h",
+         "1d"
+      ]
+   },
+   "timezone": "",
+   "title": "Network Indexing",
+   "uid": "mNyQRmbZzfff",
+   "version": 1
+}

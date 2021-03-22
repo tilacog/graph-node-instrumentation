@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  prometheus:
+    ports:
+      - '9090:9090'
+    build: ./instrumentation/prometheus
+    command:
+      [
+        '--config.file=/etc/prometheus/prometheus.yaml',
+        '--storage.tsdb.path=/prometheus',
+        '--web.console.libraries=/usr/share/prometheus/console_libraries',
+        '--web.console.templates=/usr/share/prometheus/consoles',
+        '--log.level=debug',
+      ]
+    extra_hosts:
+      # $ docker network inspect bridge
+      - hostnet:172.17.0.1
+
+  grafana:
+    build: ./instrumentation/grafana
+    ports:
+      - '3000:3000'
