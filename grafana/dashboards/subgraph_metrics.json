@@ -94,134 +94,182 @@
                "instant": true,
                "interval": "",
                "legendFormat": "total",
-               "refId": "L"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"unknown\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "unknown",
-               "refId": "B"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"scan_blocks\"}[1y]))",
-               "format": "time_series",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "scan_blocks",
-               "refId": "A"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"module_init\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "module_init",
-               "refId": "C"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"run_handler\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "run_handler",
-               "refId": "D"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"transact_block\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "transact_block",
-               "refId": "G"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_other\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_other",
-               "refId": "F"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_get\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_store_get",
-               "refId": "E"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_store_set",
-               "refId": "H"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ethereum_call\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_ethereum_call",
-               "refId": "I"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_cat\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_ipfs_cat",
-               "refId": "J"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_map\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "host_export_ipfs_map",
-               "refId": "K"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"store_get_asc_new\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "store_get_asc_new",
-               "refId": "M"
+               "refId": "Q0"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "apply_entity_modifications",
-               "refId": "N"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"check_interface_entity_uniqueness\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "check_interface_entity_uniqueness",
-               "refId": "O"
-            },
-            {
-               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_update\"}[1y]))",
-               "instant": true,
-               "interval": "",
-               "legendFormat": "apply_entity_modifications_update",
-               "refId": "P"
+               "refId": "Q1"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_insert\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "apply_entity_modifications_insert",
-               "refId": "Q"
+               "refId": "Q2"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_update\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "apply_entity_modifications_update",
+               "refId": "Q3"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"as_modifications\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "as_modifications",
-               "refId": "R"
+               "refId": "Q4"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"chain_head\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "chain_head",
+               "refId": "Q5"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"check_interface_entity_uniqueness\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "check_interface_entity_uniqueness",
+               "refId": "Q6"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"delete_modification_clamp_range_query\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "delete_modification_clamp_range_query",
+               "refId": "Q7"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"entity_cache_evict\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "entity_cache_evict",
-               "refId": "S"
+               "refId": "Q8"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"fetch_blocks\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "fetch_blocks",
+               "refId": "Q9"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ethereum_call\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_ethereum_call",
+               "refId": "Q10"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_cat\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_ipfs_cat",
+               "refId": "Q11"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_map\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_ipfs_map",
+               "refId": "Q12"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_other\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_other",
+               "refId": "Q13"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_get\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_get",
+               "refId": "Q14"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set",
+               "refId": "Q15"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"insert_modification_insert_query\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "insert_modification_insert_query",
+               "refId": "Q16"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"module_init\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "module_init",
+               "refId": "Q17"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"run_handler\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "run_handler",
+               "refId": "Q18"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"scan_blocks\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "scan_blocks",
+               "refId": "Q19"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"store_get_asc_new\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "store_get_asc_new",
+               "refId": "Q20"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"transact_block\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "transact_block",
+               "refId": "Q21"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"unknown\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "unknown",
+               "refId": "Q22"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_modification_clamp_range_query\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "update_modification_clamp_range_query",
+               "refId": "Q23"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_modification_insert_query\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "update_modification_insert_query",
+               "refId": "Q24"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_proof_of_indexing\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "update_proof_of_indexing",
+               "refId": "Q25"
             }
          ],
          "timeFrom": null,

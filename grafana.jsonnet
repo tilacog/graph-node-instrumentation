@@ -4,9 +4,11 @@ local queries = [
   "apply_entity_modifications_insert",
   "apply_entity_modifications_update",
   "as_modifications",
+  "chain_head",
   "check_interface_entity_uniqueness",
   "delete_modification_clamp_range_query",
   "entity_cache_evict",
+  "fetch_blocks",
   "host_export_ethereum_call",
   "host_export_ipfs_cat",
   "host_export_ipfs_map",
@@ -22,6 +24,7 @@ local queries = [
   "unknown",
   "update_modification_clamp_range_query",
   "update_modification_insert_query",
+  "update_proof_of_indexing",
 ];
 
 {
