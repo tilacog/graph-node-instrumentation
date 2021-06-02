@@ -97,179 +97,214 @@
                "refId": "Q0"
             },
             {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set__proof_of_indexing\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set__proof_of_indexing",
+               "refId": "Q1"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set__insert_id\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set__insert_id",
+               "refId": "Q2"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set__validation\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set__validation",
+               "refId": "Q3"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set__post_validation\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set__post_validation",
+               "refId": "Q4"
+            },
+            {
+               "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set__wasm_instance_context_store_set\"}[1y]))",
+               "instant": true,
+               "interval": "",
+               "legendFormat": "host_export_store_set__wasm_instance_context_store_set",
+               "refId": "Q5"
+            },
+            {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "apply_entity_modifications",
-               "refId": "Q1"
+               "refId": "Q6"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_insert\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "apply_entity_modifications_insert",
-               "refId": "Q2"
+               "refId": "Q7"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_update\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "apply_entity_modifications_update",
-               "refId": "Q3"
+               "refId": "Q8"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"as_modifications\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "as_modifications",
-               "refId": "Q4"
+               "refId": "Q9"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"chain_head\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "chain_head",
-               "refId": "Q5"
+               "refId": "Q10"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"check_interface_entity_uniqueness\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "check_interface_entity_uniqueness",
-               "refId": "Q6"
+               "refId": "Q11"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"delete_modification_clamp_range_query\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "delete_modification_clamp_range_query",
-               "refId": "Q7"
+               "refId": "Q12"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"entity_cache_evict\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "entity_cache_evict",
-               "refId": "Q8"
+               "refId": "Q13"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"fetch_blocks\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "fetch_blocks",
-               "refId": "Q9"
+               "refId": "Q14"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ethereum_call\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_ethereum_call",
-               "refId": "Q10"
+               "refId": "Q15"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_cat\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_ipfs_cat",
-               "refId": "Q11"
+               "refId": "Q16"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_map\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_ipfs_map",
-               "refId": "Q12"
+               "refId": "Q17"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_other\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_other",
-               "refId": "Q13"
+               "refId": "Q18"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_get\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_store_get",
-               "refId": "Q14"
+               "refId": "Q19"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "host_export_store_set",
-               "refId": "Q15"
+               "refId": "Q20"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"insert_modification_insert_query\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "insert_modification_insert_query",
-               "refId": "Q16"
+               "refId": "Q21"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"module_init\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "module_init",
-               "refId": "Q17"
+               "refId": "Q22"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"run_handler\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "run_handler",
-               "refId": "Q18"
+               "refId": "Q23"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"scan_blocks\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "scan_blocks",
-               "refId": "Q19"
+               "refId": "Q24"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"store_get_asc_new\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "store_get_asc_new",
-               "refId": "Q20"
+               "refId": "Q25"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"transact_block\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "transact_block",
-               "refId": "Q21"
+               "refId": "Q26"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"unknown\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "unknown",
-               "refId": "Q22"
+               "refId": "Q27"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_modification_clamp_range_query\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "update_modification_clamp_range_query",
-               "refId": "Q23"
+               "refId": "Q28"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_modification_insert_query\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "update_modification_insert_query",
-               "refId": "Q24"
+               "refId": "Q29"
             },
             {
                "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"update_proof_of_indexing\"}[1y]))",
                "instant": true,
                "interval": "",
                "legendFormat": "update_proof_of_indexing",
-               "refId": "Q25"
+               "refId": "Q30"
             }
          ],
          "timeFrom": null,
